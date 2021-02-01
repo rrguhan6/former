@@ -3,12 +3,14 @@ version: '3'
 services:
   server:
     build: server
-    command: ["flask", "run", "--host=0.0.0.0"]
+    command: ["run.py"]
     volumes:
       - ./server:/server
     environment:
       - FLASK_ENV=development
       - FLASK_APP=run.py
+    networks: 
+      - former
     ports:
       - "4000:4000"
 
@@ -20,10 +22,19 @@ services:
       - node-modules:/client/node_modules
     environment:
       - NODE_ENV=development
+    networks: 
+
+      - former
     ports:
       - '3000:3000'
+    links:
+      - server
     depends_on:
       - server
 
 volumes:
   node-modules:
+
+networks:
+    former:
+        driver: bridge
