@@ -12,5 +12,5 @@ Installation:
         1.pip3 install -r requirements.txt
         2.python3  run.py
 
-    Goto localhost:4000
+    Goto localhost:3000
 
