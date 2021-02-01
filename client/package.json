@@ -6,7 +6,8 @@
     "react",
     "starter"
   ],
-  "proxy": "http://127.0.0.1:4000/",
+  
+  "proxy": "http://127.0.0.1:4000/", 
   "main": "src/index.js",
   "dependencies": {
     "@codegateinc/react-form-builder": "^0.1.45",
